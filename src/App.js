@@ -6,10 +6,10 @@ function App() {
 	const [user, setUser] = useState(0);
 
 	useEffect(() => {
-		setUser(GenerateUsers(user));
-		document.title = { user };
+		setUser(GenerateUsers(usersArray));
+		document.title = { user};
 	}, [user.length]);
-
+  
 	return (
 		<>
     
