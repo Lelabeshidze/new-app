@@ -1,7 +1,7 @@
 import logo from "./logo.svg";
 import "./App.css";
 import React, { useState, useEffect } from "react";
-const generateUsers  = () => {
+const generateUsers = () => {
 	return [
 		{
 			name: "Lela",
@@ -54,34 +54,40 @@ const generateUsers  = () => {
 			id: 10,
 		},
 	];
-}
+};
 
 function App() {
-	const [users,setUsers] = useState([]);
-	useEffect(()=>{
+	const [users, setUsers] = useState([]);
+	useEffect(() => {
 		setUsers(generateUsers());
-	},[])
+	}, []);
 	const onClickHandler = () => {
 		setUsers((prevState) => {
-			const ind = Math.floor(Math.random()*users.length);
-			const newArray = prevState.filter((user,index) =>index !== ind);
+			const ind = Math.floor(Math.random() * users.length);
+			const newArray = prevState.filter((user, index) => index !== ind);
 			return newArray;
-		} )
-	}
-	useEffect (()=>{
-		document.title = `${users.length}`
-	})
+		});
+	};
+	useEffect(() => {
+		document.title = `${users.length}`;
+	});
 	return (
-		<div>{users.map((user)=> {
-			const {name,age,id} = user;
-			return(
-				<div key={id}>{name}{age}</div>
-			)
-		})}
-		<button onClick={onClickHandler}>Delete User</button>
+		<div>
+			{users.map((user) => {
+				const { name, age, id } = user;
+				return (
+					<div key={id}>
+						{name}
+						{age}
+					</div>
+				);
+			})}
+			<button onClick={onClickHandler}>Delete User</button>
 		</div>
-	)
+	);
 }
 
 export default App;
+ const someFunction = () =>{
 
+ }
